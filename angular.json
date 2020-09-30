@@ -13,6 +13,12 @@
         }
       },
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en",
+        "locales": {
+          "nl": "src/localization/messages.nl.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -24,12 +30,19 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [],
+            "localize": true,
             "styles": [
               "src/styles.scss"
             ],
             "scripts": []
           },
           "configurations": {
+            "nl": {
+              "localize": ["nl"]
+            },
+            "en": {
+              "localize": ["en"]
+            },
             "production": {
               "fileReplacements": [],
               "optimization": true,
@@ -41,13 +54,11 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
             }
           }
         },
@@ -57,6 +68,12 @@
             "browserTarget": "material-aio-example:build"
           },
           "configurations": {
+            "nl": {
+              "browserTarget": "material-aio-example:build:nl"
+            },
+            "en": {
+              "browserTarget": "material-aio-example:build:en"
+            },
             "production": {
               "browserTarget": "material-aio-example:build:production"
             }
@@ -83,5 +100,8 @@
       }
     }
   },
-  "defaultProject": "material-aio-example"
+  "defaultProject": "material-aio-example",
+  "cli": {
+    "analytics": false
+  }
 }
