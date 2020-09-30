@@ -24,7 +24,7 @@
   <!-- Symbol Column -->
   <ng-container matColumnDef="gas">
     <th mat-header-cell *matHeaderCellDef> Gas </th>
-    <td mat-cell *matCellDef="let element" i18n> the element is gas? {element.gas, select, 1 {yes} 0 {no}} </td>
+    <td mat-cell *matCellDef="let element" i18n> the element is gas? {element.gas, select, true {yes} false {no}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
